@@ -3,6 +3,8 @@ import { AppContext, AppContextType, ContextData } from "../../application/provi
 import { useSuperheroes } from "../../hooks/useSuperheroes";
 import SuperheroCard from "./SuperheroCard";
 import './SuperheroesListView.css';
+import Loading from "../common/Loading";
+import Error from "../common/Error";
 
 const SuperheroesListView: React.FC = () => {
     const { data, setData } = useContext(AppContext) as AppContextType;
@@ -18,12 +20,10 @@ const SuperheroesListView: React.FC = () => {
         }
     }, [apiData, setData]);
 
-    if (isLoading) {
-        return (<div>cargando</div>);
-    }
+    if (isLoading) return <Loading />;
 
     if (error !== "") {
-        return (<div>Error: {error}</div>);
+        return <Error><p>{error}</p></Error>;
     }
 
     return (

@@ -1,0 +1,6 @@
+.divError {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 50px;
+}

@@ -5,6 +5,8 @@ import { Comic, Superhero } from "../../interfaces/superheroes";
 import Header from "../common/Header";
 import './SuperheroDetail.css';
 import ComicCard from "../comics/ComicCard";
+import Loading from "../common/Loading";
+import Error from "../common/Error";
 
 const SuperheroDetail: React.FC = () => {
     const { id } = useParams<{ id: string }>();
@@ -17,12 +19,10 @@ const SuperheroDetail: React.FC = () => {
         }
     }, [data]);
 
-    if (isLoading) {
-        return (<div>cargando</div>);
-    }
+    if (isLoading) return <Loading />;
 
     if (error !== "") {
-        return (<div>Error: {error}</div>);
+        return <Error><p>{error}</p></Error>;
     }
     
     return (
