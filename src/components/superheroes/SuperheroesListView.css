@@ -1,0 +1,28 @@
+.divList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    margin: 20px 50px;
+}
+
+.divListEmpty {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 50px;
+}
+
+.divSearch {
+    margin: 48px 50px 48px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.divSearch .searchResult {
+    font-size:  12px;
+    margin-top: 15px;
+}
+
+.divSearch span {
+    font-weight: bold;
+}

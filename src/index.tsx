@@ -3,13 +3,29 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import SuperheroesListView from './components/superheroes/SuperheroesListView';
+import { DataContextProvider } from './application/provider';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <SuperheroesListView/>,
+  }
+]);
+
 root.render(
   <React.StrictMode>
-    <App />
+    <DataContextProvider>
+      <App />
+      <main>
+        <RouterProvider router={router} />
+      </main>
+    </DataContextProvider>
   </React.StrictMode>
 );
 
