@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import SuperheroesListView from './components/superheroes/SuperheroesListView';
+import SuperheroDetail from './components/superheroes/SuperheroDetail';
 import { DataContextProvider } from './application/provider';
 
 const root = ReactDOM.createRoot(
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <SuperheroesListView/>,
+  },
+  {
+    path: "/detail/:id",
+    element: <SuperheroDetail/>,
   }
 ]);
 

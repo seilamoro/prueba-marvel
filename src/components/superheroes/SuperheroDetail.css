@@ -1,0 +1,145 @@
+.superheroData {
+    border-top: 2px solid #333333;
+    width: 100%;
+    height: 250px;
+    background-color: var(--app-background);
+    position: relative;
+    color: var(--app-main-text-color);
+    display: flex;
+}
+
+.superheroData:before {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    border-bottom: 25px solid white;
+    border-left: 25px solid var(--app-background);
+    width: 0;
+}
+
+.superheroData .superheroElements {
+    display: flex;
+    margin: auto;
+    width: 70%;
+}
+
+.superheroData .superheroImg {
+    height: 250px;
+    width: auto !important;
+}
+
+.superheroComicDivTitle {
+    height: 40%;
+    margin-bottom: 25px;
+    margin-left: 25px;
+    justify-content: flex-end;
+    align-items: end;
+    display: flex;
+}
+
+.superheroData .superheroName {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: bold;
+    flex: 1;;
+    min-width: 85%;
+    max-width: 85%;
+    bottom: 5px;
+    position: relative;
+}
+
+.superheroData .superheroFavorite {
+    height: 100%;
+    flex: 1;
+    align-items: end;
+    top: 3px;
+    left: 10px;
+    position: relative;
+    display: flex;
+}
+
+.superheroData .superheroFavorite img {
+    height: 45px;
+}
+
+.superheroData .superheroDesc {
+    height: 60%;
+    margin-left: 25px;
+    font-size: 16px;
+}
+
+.superheroComicTitle {
+    display: flex;
+    margin: auto;
+    width: 70%;
+    margin-top: 25px;
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 48px;
+    margin-bottom: 28px;
+}
+
+.superheroComicsList {
+    display: flex;
+    margin: auto;
+    width: 70%;
+    margin-top: 25px;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+    .superheroData .superheroElements {
+        width: 100%;
+    }
+    .superheroComicTitle,
+    .superheroComicsList {
+        width: 90%;
+    }
+    .superheroDesc,
+    .superheroComicDivTitle {
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .superheroData {
+        height: unset;
+    }
+    .superheroData .superheroElements {
+        width: 100%;
+        display: inline;
+    }
+    .superheroData .superheroImg {
+        height: unset !important;
+        width: 100% !important;
+    }
+    .superheroComicTitle,
+    .superheroComicsList {
+        width: 95%;
+    }
+    .superheroDesc,
+    .superheroComicDivTitle {
+        margin-right: 10px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+}
+
+.superheroComicsList::-webkit-scrollbar {
+    height: 5px;
+    height: 5px;
+}
+
+.superheroComicsList::-webkit-scrollbar-track {
+    background: #D9D9D9;
+}
+
+.superheroComicsList::-webkit-scrollbar-thumb {
+    background: var(--marvel-red);
+}
+
+.superheroComicsList::-webkit-scrollbar-thumb:hover {
+    background: var(--marvel-red);
+}

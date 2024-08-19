@@ -1,0 +1,26 @@
+.comicMain {
+    width: 179.2px;
+    margin-right: 25px;
+}
+
+.comicMain img {
+    width: 179.2px;
+    height: 268.8px;
+    margin-right: 25px;
+}
+
+.comicTitle {
+    font-size: 12px;
+    max-width: 100%;
+    overflow: initial;
+    white-space: initial;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.comicYear {
+    font-size: 12px;
+    max-width: 100%;
+    overflow: initial;
+    white-space: initial;
+}
