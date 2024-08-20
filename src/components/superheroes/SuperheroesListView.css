@@ -17,10 +17,15 @@
     align-items: center;
     justify-content: space-between;
 }
-
 .divSearch .searchResult {
     font-size:  12px;
     margin-top: 15px;
+}
+
+.searchFavoritesTitle {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 38px;
 }
 
 .divSearch span {

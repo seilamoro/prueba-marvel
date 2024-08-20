@@ -5,9 +5,14 @@ import './Search.css';
 
 const Search = () => {
     const [searchValue, setSearchValue] = useState<string>('');
+    const [ showFavorites, setShowFavorites] = useState<boolean>(false);
     const { data, setData } = useContext(AppContext) as AppContextType;
     
     useEffect(() => {
+        if(data.showFavorites !== showFavorites) {
+            setSearchValue('');
+            setShowFavorites(data.showFavorites);
+        }
         let superheroesFilter: SuperheroesList = {
             list: []
         };
@@ -19,9 +24,11 @@ const Search = () => {
         let updatedContextData: ContextData = {
             listToShow: superheroesFilter,
             listMain: data.listMain,
+            listFavorites: data.listFavorites,
+            showFavorites: data.showFavorites
         }
         setData(updatedContextData);
-    }, [searchValue, data.listMain, setData]);
+    }, [searchValue, data.listMain, setData, data.listFavorites, data.showFavorites, showFavorites]);
 
     if (!data.listMain) return (<div data-testid="dataError">Error</div>);
 

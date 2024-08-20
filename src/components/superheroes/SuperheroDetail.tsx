@@ -5,6 +5,7 @@ import { Comic, Superhero } from "../../interfaces/superheroes";
 import Header from "../common/Header";
 import './SuperheroDetail.css';
 import ComicCard from "../comics/ComicCard";
+import Favorite from "../common/Favorite";
 import Loading from "../common/Loading";
 import Error from "../common/Error";
 
@@ -46,7 +47,7 @@ const SuperheroInfo: React.FC<{ superhero: Superhero }> = ({ superhero }) => {
                     <div>
                         <div className="superheroComicDivTitle">
                             <div className="superheroName">{superhero.name}</div>
-                            <div className='superheroFavorite'><img src={window.location.origin + '/unselected.png'} alt="favorites" /></div>
+                            <div className='superheroFavorite'><Favorite data={superhero} /></div>
                         </div>
                         <div className="superheroDesc">{superhero.description}</div>
                     </div>

@@ -4,6 +4,8 @@ import { SuperheroesList } from "../interfaces/superheroes";
 export interface ContextData {
     listMain: SuperheroesList,
     listToShow: SuperheroesList,
+    listFavorites: number[],
+    showFavorites: boolean
 }
 
 let superheroesList: SuperheroesList = {
@@ -13,6 +15,8 @@ let superheroesList: SuperheroesList = {
 let contextData: ContextData = {
     listMain: superheroesList,
     listToShow: superheroesList,
+    listFavorites: [],
+    showFavorites: false
 }
 
 export type AppContextType = {

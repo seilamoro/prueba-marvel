@@ -3,6 +3,7 @@ import './SuperheroCard.css';
 import { PropsSuperhero, Superhero } from '../../interfaces/superheroes';
 import { AppContext, AppContextType } from "../../application/provider";
 import { useContext } from 'react';
+import Favorite from '../common/Favorite';
 
 const SuperheroCard = (props: PropsSuperhero) => {
     const superheroData: Superhero = props.data;
@@ -21,9 +22,7 @@ const SuperheroCard = (props: PropsSuperhero) => {
                 <Link key={superheroData.id} to={`/detail/${superheroData.id}`} className='link-notUnderLine'>
                     <div className='superheroCardName'>{superheroData.name}</div>
                 </Link>
-                <div className='superheroCardFavorite'>
-                    <img src={window.location.origin + '/unselected.png'} alt="favorites" />
-                </div>
+                <div className='superheroCardFavorite'><Favorite data={superheroData}/></div>
             </div>
         </div>
     )
