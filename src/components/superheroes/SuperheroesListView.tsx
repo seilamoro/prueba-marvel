@@ -3,6 +3,7 @@ import { AppContext, AppContextType, ContextData } from "../../application/provi
 import { useSuperheroes } from "../../hooks/useSuperheroes";
 import SuperheroCard from "./SuperheroCard";
 import './SuperheroesListView.css';
+import Search from "../common/Search";
 import Loading from "../common/Loading";
 import Error from "../common/Error";
 
@@ -29,6 +30,7 @@ const SuperheroesListView: React.FC = () => {
     return (
         <div>
             <div className="divSearch">
+                <Search />
                 <div className="searchResult">{ data.listToShow.list.length } RESULTS</div>
             </div>
             <div className="divList">
