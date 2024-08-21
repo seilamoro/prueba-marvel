@@ -12,7 +12,9 @@
     "@types/react-dom": "^18.3.0",
     "@types/react-router-dom": "^5.3.3",
     "axios": "^1.7.4",
+    "axios-mock-adapter": "^2.0.0",
     "md5": "^2.3.0",
+    "prueba-marvel": "file:",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.1",
@@ -23,8 +25,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!axios)/\"",
+    "eject": "react-scripts eject",
+    "e2e": "cypress run"
   },
   "eslintConfig": {
     "extends": [
@@ -45,6 +48,17 @@
     ]
   },
   "devDependencies": {
-    "@types/md5": "^2.3.5"
+    "@testing-library/dom": "^10.1.0",
+    "@testing-library/react": "^16.0.0",
+    "@types/md5": "^2.3.5",
+    "cypress": "^13.13.3"
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "src/reportWebVitals.ts",
+      "src/index.tsx",
+      "src/interfaces/superheroes.ts",
+      "src/components/mock.ts"
+    ]
   }
 }

@@ -1,46 +1,120 @@
-# Getting Started with Create React App
+# Prueba Marvel
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Autor
 
-## Available Scripts
+Sheila Moro Herrero
 
-In the project directory, you can run:
+## Descripción
 
-### `npm start`
+Este proyecto está construido con React v18.3.1 y sigue una estructura organizada por funcionalidades, donde cada carpeta agrupa los archivos relacionados con un módulo específico. Esta estructura facilita la mantenibilidad y escalabilidad del código.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Dependencias
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+El proyecto utiliza las siguientes dependencias principales:
+  * __react-dom__ v18.3.1
+  * __axios__ v1.7.4
+  * __cypress__ v13.13.3
 
-### `npm test`
+### Instalación de las dependencias
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para instalar las dependencias del proyecto, sigue estos pasos:
 
-### `npm run build`
+Abre una terminal, navega hasta la raíz del proyecto y ejecuta uno de los siguientes comandos:
+```
+npm install
+```
+o
+```
+yarn install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Esto descargará e instalará todas las dependencias necesarias para ejecutar y desarrollar el proyecto.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Ejecución de la aplicación
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+El proyecto puede ejecutarse en dos modos diferentes: __desarrollo__ y __producción__.
 
-### `npm run eject`
+### Modo Desarrollo
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+En el modo desarrollo, los assets se sirven sin minimizar para facilitar la depuración. Para iniciar la aplicación en este modo:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Navega a la raíz del proyecto en tu terminal y ejecuta uno de los siguientes comandos:
+```
+npm start
+```
+o
+```
+yarn start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver la aplicación en funcionamiento.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Modo Producción
 
-## Learn More
+En el modo producción, los assets se concatenan y minimizan para optimizar el rendimiento. Para compilar la aplicación en modo producción:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Desde la raíz del proyecto, ejecuta uno de los siguientes comandos:
+```
+npm run build
+```
+o
+```
+yarn run build
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Esto generará una carpeta __`build`__ que contiene los archivos estáticos listos para ser servidos.
+
+#### Servir la Aplicación en Modo Producción:
+Se puede servir la aplicación compilada usando un servidor estático. Para ello:
+
+Instala el paquete __`serve`__ globalmente:
+```
+npm install -g serve
+```
+o
+```
+yarn global add serve
+```
+
+Sirve la aplicación con el siguiente comando:
+```
+serve -s build
+```
+Ahora, la aplicación estará disponible para su uso en modo producción.
+
+## Pruebas
+### Pruebas Unitarias
+Las pruebas unitarias se han implementado para verificar el funcionamiento individual de cada componente. 
+Para ejecutar estas pruebas:
+
+Desde la raíz del proyecto, ejecuta uno de los siguientes comandos:
+```
+npm test
+```
+o
+```
+yarn test
+```
+
+### Pruebas de Integración
+Además de las pruebas unitarias, se han implementado pruebas de integración para garantizar el correcto funcionamiento de la aplicación en su conjunto. 
+Estas pruebas simulan el comportamiento del usuario y han sido configuradas para usar respuestas mockeadas del API, acelerando su ejecución.
+Para ejecutar las pruebas de integración:
+
+Inicia la aplicación en modo desarrollo:
+```
+npm start
+```
+o
+```
+yarn start
+```
+
+Ejecuta las pruebas de integración con el siguiente comando:
+```
+npm run e2e
+```
+o
+```
+yarn run e2e
+```
